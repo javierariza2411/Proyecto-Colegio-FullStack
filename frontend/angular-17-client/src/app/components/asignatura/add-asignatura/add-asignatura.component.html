@@ -1,0 +1,28 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="title">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="asignatura.nombre"
+        name="title"
+      />
+
+      
+    </div>
+
+    <span class="badge bg-secondary"  routerLink="/asignatura">Volver</span>
+
+
+
+    <button (click)="saveAsignatura()" class="btn btn-success">Guardar</button>
+    } @else {
+    <h4>Se ha guardado la asignatura correctamente!</h4>
+    <button class="btn btn-success" (click)="newAsignatura()">Nuevo</button>
+    }
+  </div>
+</div>

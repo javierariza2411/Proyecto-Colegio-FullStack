@@ -1,0 +1,11 @@
+<h4>Listado de Asignaturas</h4>
+<ul class="list-group">
+    @for (asignatura of asignaturas; track asignatura.id; let i = $index) {
+    <li class="list-group-item" 
+    [class.active]="showActivate && i == currentIndex"
+      (click)="seleccionarAsignatura(asignatura, i)">
+        {{asignatura.nombre }}
+    </li>
+
+    }
+</ul>

@@ -1,0 +1,12 @@
+  <h4>Listado de Profesores</h4>
+  <ul class="list-group">
+    @for (profesor of profesores; track profesor.id; let i = $index) {
+    <li
+      class="list-group-item"
+      [class.active]="i == currentIndex"
+      (click)="seleccionarProfesor(profesor, i)"
+    >
+      {{ profesor.nombre }}
+    </li>
+    }
+  </ul>

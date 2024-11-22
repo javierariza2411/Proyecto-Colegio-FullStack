@@ -1,0 +1,28 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" routerLink="/addasignaturas">Crear Nuevo</button>
+
+
+  <div class="row">
+
+    <div class="col-lg-6">
+      <app-list-asignaturas [getAsignaturas]="asignaturas" [showActivate]="true"
+        (selectAsignatura)="getEstudiantesByAsignatura($event)"></app-list-asignaturas>
+    </div>
+    <div class="col-lg-6">
+
+      @if (currentAsignatura.id){
+      <h4>Asignatura</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentAsignatura.nombre }}
+      </div>
+
+      <app-list-estudiantes [getEstudiantes]="estudiantes"></app-list-estudiantes>
+
+      }
+
+    </div>
+
+
+  </div>
+
+</div>
